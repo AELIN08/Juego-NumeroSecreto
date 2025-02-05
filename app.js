@@ -38,12 +38,12 @@ function verificarIntento() {
     console.log(`El numero secreto es ${numeroSecreto}`)
     if(numeroDeUsuario === numeroSecreto){
         //cuando el usuario acierta
+        asignarTextoElemento('h1','¡Felicidades! Ganaste')
         asignarTextoElemento('p',`Acertaste el numero en ${intentos} ${(intentos=== 1)? 'intento':'intentos'}`);
         //puede reiniciarse el juego
         document.getElementById('reiniciar').removeAttribute('disabled')
-        imagenInicio.style.display = 'none'; // Ocultamos la imagen inicial
-        imagenGanador.style.display = 'block'; // Mostramos la imagen ganadora
-
+        imagenInicio.classList.add('hidden');  // Agrega la clase 'hidden' para ocultar la imagen
+        imagenGanador.classList.remove('hidden');  // Elimina la clase 'hidden' para mostrar la imagen ganadora
 
     }else{
         //cuando el usuario no acierta...
@@ -73,9 +73,8 @@ function condicionesIniciales(){
     numeroSecreto=generarNumeroSecreto();
     //inicializar el numero de iententos
     intentos = 1;
-    //imagen de inicio
-    imagenGanador.style.display = 'none'; // Aseguramos que la imagen ganadora esté oculta al inicio
-    imagenInicio.style.display = 'block'; // Mostramos la imagen de inicio
+    imagenGanador.classList.add('hidden'); // Aseguramos que la imagen ganadora esté oculta al inicio
+    imagenInicio.classList.remove('hidden'); // Mostramos la imagen de inicio
 }
 
 function reiniciarJuego(){
