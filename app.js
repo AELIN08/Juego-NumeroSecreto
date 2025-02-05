@@ -4,7 +4,8 @@ let numeroSecreto = 0;
 let intentos = 0;
 let listasNumerosSorteados = [];
 let numeroMaximo = 10;
-
+let imagenInicio = document.getElementById("imgInicio");
+let imagenGanador = document.getElementById("imgGanador");
 
 //Funcion generica para asignar texto a cualquier elemento HTML
 function asignarTextoElemento(elemento, texto) {
@@ -40,6 +41,8 @@ function verificarIntento() {
         asignarTextoElemento('p',`Acertaste el numero en ${intentos} ${(intentos=== 1)? 'intento':'intentos'}`);
         //puede reiniciarse el juego
         document.getElementById('reiniciar').removeAttribute('disabled')
+        imagenInicio.style.display = 'none'; // Ocultamos la imagen inicial
+        imagenGanador.style.display = 'block'; // Mostramos la imagen ganadora
 
 
     }else{
@@ -70,6 +73,9 @@ function condicionesIniciales(){
     numeroSecreto=generarNumeroSecreto();
     //inicializar el numero de iententos
     intentos = 1;
+    //imagen de inicio
+    imagenGanador.style.display = 'none'; // Aseguramos que la imagen ganadora esté oculta al inicio
+    imagenInicio.style.display = 'block'; // Mostramos la imagen de inicio
 }
 
 function reiniciarJuego(){

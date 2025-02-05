@@ -109,3 +109,7 @@ button {
     font-size: 32px;
     font-weight: 400;
 }
+
+.container__imagen-robot{
+    height: 600px;
+}
