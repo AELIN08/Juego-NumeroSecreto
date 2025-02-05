@@ -110,9 +110,6 @@ button {
     font-weight: 400;
 }
 
-.container__imagen-robot{
-    height: 700px;
-}
 .hidden {
     display: none;
 }
@@ -120,8 +117,10 @@ button {
 /* Ocultar la imagen por defecto */
 #imgInicio {
     display: block;
+    height: 700px;
 }
 
 #imgGanador {
     display: none;
+    height: 700px;
 }
